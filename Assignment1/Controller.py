@@ -17,10 +17,9 @@ def get_Bookmarks(id):
     with SqliteDict('./db.sqlite') as mydict:  # note no autocommit=True
         if id not in mydict.keys():
             print('invalid id recived')
-            response = {'message':'invalid Id'}
-            print('***Response***')
-            print(json.dumps(response))
-            return Response(response=json.dumps(response),status = 400)
+
+
+            return Response(status = 404)
         else :
             val = mydict[id]
             val.etag += 1
@@ -42,12 +41,12 @@ def create_Bookmarks():
             dict = request.get_json()
 
             for key in mydict:
-                if(mydict[key].url ==dict['url']):
+                if(mydict[key].url == dict['url']):
                     response = {'reason':'The given URL already existed in the system.'}
                     print('***Response***')
                     print(json.dumps(response))
 
-                    return Response(response=json.dumps(response),status=404) # returning the response if url exits
+                    return Response(response=json.dumps(response),status=400) # returning the response if url exits
 
 
 
@@ -55,7 +54,7 @@ def create_Bookmarks():
             while(id in mydict.keys()):
                 id = get_random_alphanumeric_string(3,3)
 
-            mydict[id] = Bookmark(id,dict['name'],dict['url'],dict['description'])
+            mydict[id] = Bookmark(dict['name'],dict['url'],dict['description'])
             mydict.commit()
 
             response = {'id': id}
