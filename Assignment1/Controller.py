@@ -96,7 +96,7 @@ def get_Stats(id):
                return Response(response=json.dumps(response),status=400,content_type='Application/json')
 
 
-           etag = request.headers.get('Etag')
+           etag = request.headers.get('ETag')
            bookmark = mydict[id]
 
            print('current etag = ',type(bookmark.etag))
@@ -104,7 +104,7 @@ def get_Stats(id):
 
            if (etag == None) :
                print('etag not in header')
-               response = Response(response={str(bookmark.etag)}, status=200, headers={'Etag': bookmark.etag})
+               response = Response(response={str(bookmark.etag)}, status=200, headers={'ETag': bookmark.etag})
                return response
            elif not etag.isnumeric():
                response = {'message': 'invalid request'}
@@ -116,7 +116,7 @@ def get_Stats(id):
                response.headers['etag'] = bookmark.etag
                return Response(status=304,headers={'Etag':bookmark.etag})
            elif int(etag) != bookmark.etag:
-               response = Response(response={str(bookmark.etag)}, status=200, headers={'Etag': bookmark.etag})
+               response = Response(response={str(bookmark.etag)}, status=200, headers={'ETag': bookmark.etag})
                return response
            else:
                response = {'message': 'invalid request'}
