@@ -9,6 +9,7 @@ verify_ssl = true
 schedule = "*"
 pyyaml = "*"
 requests = "*"
+http-client = "*"
 
 [requires]
 python_version = "3.7"
