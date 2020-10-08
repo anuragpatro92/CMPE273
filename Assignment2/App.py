@@ -127,32 +127,31 @@ def apiCall(step, url):
     if(step.outbound_url != '::input:data'):
         url = step.outbound_url
 
-    if(step.method == 'GET'):
-        condition = step.condition
-        try:
-            responses = requests.get(url)
-            left = condition['if']['equal']['left']
-            right = condition['if']['equal']['right']
-            if ((left == 'http.response.code') & (str(right) == str(responses.status_code))):
-                action = condition['then']['action']
-                data = condition['then']['data']
-                if 'invoke' in action:
-                    to_step = action.split(':')
-                    id = int(to_step[-1])
-                    apiCall(allsteps[id], data)
-                elif 'print' in action:
-                    display(data, responses)
-            else:
-                print('error')
-        except:
-            action = condition['else']['action']
-            data = condition['else']['data']
+    condition = step.condition
+    try:
+        responses = requests.request(step.method,url)
+        left = condition['if']['equal']['left']
+        right = condition['if']['equal']['right']
+        if ((left == 'http.response.code') & (str(right) == str(responses.status_code))):
+            action = condition['then']['action']
+            data = condition['then']['data']
             if 'invoke' in action:
                 to_step = action.split(':')
                 id = int(to_step[-1])
                 apiCall(allsteps[id], data)
             elif 'print' in action:
-                display(data,None)
+                display(data, responses)
+        else:
+            print('error...')
+    except:
+        action = condition['else']['action']
+        data = condition['else']['data']
+        if 'invoke' in action:
+            to_step = action.split(':')
+            id = int(to_step[-1])
+            apiCall(allsteps[id], data)
+        elif 'print' in action:
+            display(data,None)
 
 
 
