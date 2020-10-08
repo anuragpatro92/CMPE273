@@ -1,6 +1,8 @@
 import zmq
+import sys
 
 # ZeroMQ Context
+
 context2 =zmq.Context()
 
 # Define the socket using the "Context"
@@ -14,3 +16,4 @@ while True:
     reply_msg="received: "+ message
     # sock.send(reply_msg.encode())
     print(reply_msg)
+

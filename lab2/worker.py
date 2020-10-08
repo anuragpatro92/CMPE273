@@ -1,9 +1,15 @@
 import zmq
 import math
 import time
+import sys
+import random
+
+
 
 # ZeroMQ Context
 
+time.sleep(10)
+message = 0
 
 
 while True:
@@ -18,7 +24,7 @@ while True:
         message = message.decode()
         sock.close()
 
-        time.sleep(1)
+        time.sleep(0.3)
 
         if message:
             reply = "root of {} = {}".format(message, math.sqrt(int(message)))
@@ -32,13 +38,7 @@ while True:
             dashboard.close()
     except :
         print('connecting')
-        time.sleep(2)
+        time.sleep(0.05)
 
 
 
-# Define the socket using the "Context"
-
-
-
-
-# Run a simple "Echo" Server
