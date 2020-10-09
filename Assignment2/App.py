@@ -158,6 +158,7 @@ def apiCall(step, url):
 #display required
 def display(data,responses):
 
+    data_Str = temp = time.split('.')[-1]
     if data == 'http.response.headers.X-Ratelimit-Limit':
         print(responses.headers.get('X-Ratelimit-Limit'))
     elif data == 'http.response.code':
@@ -165,7 +166,10 @@ def display(data,responses):
     elif data == 'http.response.headers.content-type':
         print(responses.headers.get('content-type'))
     else :
-        print(data)
+        try:
+            print(responses.headers.get(data_Str))
+        except:
+            print('wrong header')
 
 
 
