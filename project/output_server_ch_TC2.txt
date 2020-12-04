@@ -1,0 +1,40 @@
+num_server=4
+Starting a server at:2000...
+<class 'str'>
+Started a server at:2000...
+Starting a server at:2001...
+<class 'str'>
+Started a server at:2001...
+Starting a server at:2002...
+<class 'str'>
+Started a server at:2002...
+Starting a server at:2003...
+<class 'str'>
+Started a server at:2003...
+Server_port=2000:key=key-0,value=value-0
+Server_port=2003:key=key-1,value=value-1
+Server_port=2000:key=key-2,value=value-2
+Server_port=2002:key=key-3,value=value-3
+Server_port=2000:key=key-4,value=value-4
+Server_port=2002:key=key-5,value=value-5
+Server_port=2002:key=key-6,value=value-6
+Server_port=2003:key=key-7,value=value-7
+Server_port=2003:key=key-8,value=value-8
+Server_port=2001:key=key-9,value=value-9
+{'key-0': 'value-0', 'key-2': 'value-2', 'key-4': 'value-4'}
+{'Collection': [{'key': 'key-0', 'value': 'value-0'}, {'key': 'key-2', 'value': 'value-2'}, {'key': 'key-4', 'value': 'value-4'}]}
+Server_port=2001:key=key-0,value=value-0
+Server_port=2001:key=key-2,value=value-2
+Server_port=2001:key=key-4,value=value-4
+inside f
+removing a  server......0
+{'key-9': 'value-9', 'key-0': 'value-0', 'key-2': 'value-2', 'key-4': 'value-4'}
+{'Collection': [{'key': 'key-9', 'value': 'value-9'}, {'key': 'key-0', 'value': 'value-0'}, {'key': 'key-2', 'value': 'value-2'}, {'key': 'key-4', 'value': 'value-4'}]}
+Server_port=2001:key=key-9,value=value-9
+inside s
+adding a new server......2000
+2000
+Started a server at:2000...
+Server_port=2000:key=key-0,value=value-0
+Server_port=2000:key=key-2,value=value-2
+Server_port=2000:key=key-4,value=value-4

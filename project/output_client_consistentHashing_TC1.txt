@@ -1,0 +1,163 @@
+0
+tcp://127.0.0.1:2000
+1
+tcp://127.0.0.1:2001
+2
+tcp://127.0.0.1:2002
+3
+tcp://127.0.0.1:2003
+{575058: 'tcp://127.0.0.1:2000', 693875: 'tcp://127.0.0.1:2001', 931339: 'tcp://127.0.0.1:2002', 205548: 'tcp://127.0.0.1:2003'}
+Creating a server connection to tcp://127.0.0.1:2000...
+Creating a server connection to tcp://127.0.0.1:2001...
+Creating a server connection to tcp://127.0.0.1:2002...
+Creating a server connection to tcp://127.0.0.1:2003...
+Sending data:{'op': 'PUT', 'key': 'key-0', 'value': 'value-0'}
+node to send tcp://127.0.0.1:2000
+Sending data:{'op': 'PUT', 'key': 'key-1', 'value': 'value-1'}
+node to send tcp://127.0.0.1:2003
+Sending data:{'op': 'PUT', 'key': 'key-2', 'value': 'value-2'}
+node to send tcp://127.0.0.1:2000
+Sending data:{'op': 'PUT', 'key': 'key-3', 'value': 'value-3'}
+node to send tcp://127.0.0.1:2002
+Sending data:{'op': 'PUT', 'key': 'key-4', 'value': 'value-4'}
+node to send tcp://127.0.0.1:2000
+Sending data:{'op': 'PUT', 'key': 'key-5', 'value': 'value-5'}
+node to send tcp://127.0.0.1:2002
+Sending data:{'op': 'PUT', 'key': 'key-6', 'value': 'value-6'}
+node to send tcp://127.0.0.1:2002
+Sending data:{'op': 'PUT', 'key': 'key-7', 'value': 'value-7'}
+node to send tcp://127.0.0.1:2003
+Sending data:{'op': 'PUT', 'key': 'key-8', 'value': 'value-8'}
+node to send tcp://127.0.0.1:2003
+Sending data:{'op': 'PUT', 'key': 'key-9', 'value': 'value-9'}
+node to send tcp://127.0.0.1:2001
+{'tcp://127.0.0.1:2000': 3, 'tcp://127.0.0.1:2001': 1, 'tcp://127.0.0.1:2002': 3, 'tcp://127.0.0.1:2003': 3}
+Done
+adding node .......tcp://127.0.0.1:2004
+<zmq.sugar.socket.Socket object at 0x7f8439eba600>
+Creating a server connection to tcp://127.0.0.1:2004...
+5
+{'Collection': [{'key': 'key-3', 'value': 'value-3'}, {'key': 'key-5', 'value': 'value-5'}, {'key': 'key-6', 'value': 'value-6'}]}
+[{'key': 'key-3', 'value': 'value-3'}, {'key': 'key-5', 'value': 'value-5'}, {'key': 'key-6', 'value': 'value-6'}]
+sending again after adding
+{'key': 'key-3', 'value': 'value-3'}
+['tcp://127.0.0.1:2000-0', 'tcp://127.0.0.1:2001-0', 'tcp://127.0.0.1:2002-0', 'tcp://127.0.0.1:2003-0', 'tcp://127.0.0.1:2004-0']
+sendingtcp://127.0.0.1:2002
+{'key': 'key-5', 'value': 'value-5'}
+['tcp://127.0.0.1:2000-0', 'tcp://127.0.0.1:2001-0', 'tcp://127.0.0.1:2002-0', 'tcp://127.0.0.1:2003-0', 'tcp://127.0.0.1:2004-0']
+sendingtcp://127.0.0.1:2002
+{'key': 'key-6', 'value': 'value-6'}
+['tcp://127.0.0.1:2000-0', 'tcp://127.0.0.1:2001-0', 'tcp://127.0.0.1:2002-0', 'tcp://127.0.0.1:2003-0', 'tcp://127.0.0.1:2004-0']
+sendingtcp://127.0.0.1:2004
+DONE
+<class 'map'>
+removing node .......tcp://127.0.0.1:2002
+4
+[{'key': 'key-3', 'value': 'value-3'}, {'key': 'key-5', 'value': 'value-5'}]
+{'key': 'key-3', 'value': 'value-3'}
+sending totcp://127.0.0.1:2003
+{'key': 'key-5', 'value': 'value-5'}
+sending totcp://127.0.0.1:2003
+DONE
+removing node .......tcp://127.0.0.1:2003
+3
+[{'key': 'key-1', 'value': 'value-1'}, {'key': 'key-7', 'value': 'value-7'}, {'key': 'key-8', 'value': 'value-8'}, {'key': 'key-3', 'value': 'value-3'}, {'key': 'key-5', 'value': 'value-5'}]
+{'key': 'key-1', 'value': 'value-1'}
+sending totcp://127.0.0.1:2000
+{'key': 'key-7', 'value': 'value-7'}
+sending totcp://127.0.0.1:2000
+{'key': 'key-8', 'value': 'value-8'}
+sending totcp://127.0.0.1:2000
+{'key': 'key-3', 'value': 'value-3'}
+sending totcp://127.0.0.1:2000
+{'key': 'key-5', 'value': 'value-5'}
+sending totcp://127.0.0.1:2000
+DONE
+(base) Anurags-MacBook-Pro:project anuragpatro$ clear
+(base) Anurags-MacBook-Pro:project anuragpatro$ python client_producer.py
+0
+tcp://127.0.0.1:2000
+1
+tcp://127.0.0.1:2001
+2
+tcp://127.0.0.1:2002
+3
+tcp://127.0.0.1:2003
+{575058: 'tcp://127.0.0.1:2000', 693875: 'tcp://127.0.0.1:2001', 931339: 'tcp://127.0.0.1:2002', 205548: 'tcp://127.0.0.1:2003'}
+Creating a server connection to tcp://127.0.0.1:2000...
+Creating a server connection to tcp://127.0.0.1:2001...
+Creating a server connection to tcp://127.0.0.1:2002...
+Creating a server connection to tcp://127.0.0.1:2003...
+Sending data:{'op': 'PUT', 'key': 'key-0', 'value': 'value-0'}
+node to send tcp://127.0.0.1:2000
+Sending data:{'op': 'PUT', 'key': 'key-1', 'value': 'value-1'}
+node to send tcp://127.0.0.1:2003
+Sending data:{'op': 'PUT', 'key': 'key-2', 'value': 'value-2'}
+node to send tcp://127.0.0.1:2000
+Sending data:{'op': 'PUT', 'key': 'key-3', 'value': 'value-3'}
+node to send tcp://127.0.0.1:2002
+Sending data:{'op': 'PUT', 'key': 'key-4', 'value': 'value-4'}
+node to send tcp://127.0.0.1:2000
+Sending data:{'op': 'PUT', 'key': 'key-5', 'value': 'value-5'}
+node to send tcp://127.0.0.1:2002
+Sending data:{'op': 'PUT', 'key': 'key-6', 'value': 'value-6'}
+node to send tcp://127.0.0.1:2002
+Sending data:{'op': 'PUT', 'key': 'key-7', 'value': 'value-7'}
+node to send tcp://127.0.0.1:2003
+Sending data:{'op': 'PUT', 'key': 'key-8', 'value': 'value-8'}
+node to send tcp://127.0.0.1:2003
+Sending data:{'op': 'PUT', 'key': 'key-9', 'value': 'value-9'}
+node to send tcp://127.0.0.1:2001
+{'tcp://127.0.0.1:2000': 3, 'tcp://127.0.0.1:2001': 1, 'tcp://127.0.0.1:2002': 3, 'tcp://127.0.0.1:2003': 3}
+Done
+adding node .......tcp://127.0.0.1:2004
+<zmq.sugar.socket.Socket object at 0x7ff0044aa600>
+Creating a server connection to tcp://127.0.0.1:2004...
+5
+{'Collection': [{'key': 'key-3', 'value': 'value-3'}, {'key': 'key-5', 'value': 'value-5'}, {'key': 'key-6', 'value': 'value-6'}]}
+[{'key': 'key-3', 'value': 'value-3'}, {'key': 'key-5', 'value': 'value-5'}, {'key': 'key-6', 'value': 'value-6'}]
+sending again after adding
+{'key': 'key-3', 'value': 'value-3'}
+['tcp://127.0.0.1:2000-0', 'tcp://127.0.0.1:2001-0', 'tcp://127.0.0.1:2002-0', 'tcp://127.0.0.1:2003-0', 'tcp://127.0.0.1:2004-0']
+sendingtcp://127.0.0.1:2002
+{'key': 'key-5', 'value': 'value-5'}
+['tcp://127.0.0.1:2000-0', 'tcp://127.0.0.1:2001-0', 'tcp://127.0.0.1:2002-0', 'tcp://127.0.0.1:2003-0', 'tcp://127.0.0.1:2004-0']
+sendingtcp://127.0.0.1:2002
+{'key': 'key-6', 'value': 'value-6'}
+['tcp://127.0.0.1:2000-0', 'tcp://127.0.0.1:2001-0', 'tcp://127.0.0.1:2002-0', 'tcp://127.0.0.1:2003-0', 'tcp://127.0.0.1:2004-0']
+sendingtcp://127.0.0.1:2004
+DONE
+<class 'map'>
+removing node .......tcp://127.0.0.1:2002
+4
+[{'key': 'key-3', 'value': 'value-3'}, {'key': 'key-5', 'value': 'value-5'}]
+{'key': 'key-3', 'value': 'value-3'}
+sending totcp://127.0.0.1:2003
+{'key': 'key-5', 'value': 'value-5'}
+sending totcp://127.0.0.1:2003
+DONE
+removing node .......tcp://127.0.0.1:2003
+3
+[{'key': 'key-1', 'value': 'value-1'}, {'key': 'key-7', 'value': 'value-7'}, {'key': 'key-8', 'value': 'value-8'}, {'key': 'key-3', 'value': 'value-3'}, {'key': 'key-5', 'value': 'value-5'}]
+{'key': 'key-1', 'value': 'value-1'}
+sending totcp://127.0.0.1:2000
+{'key': 'key-7', 'value': 'value-7'}
+sending totcp://127.0.0.1:2000
+{'key': 'key-8', 'value': 'value-8'}
+sending totcp://127.0.0.1:2000
+{'key': 'key-3', 'value': 'value-3'}
+sending totcp://127.0.0.1:2000
+{'key': 'key-5', 'value': 'value-5'}
+sending totcp://127.0.0.1:2000
+DONE
+{'tcp://127.0.0.1:2000': <zmq.sugar.socket.Socket object at 0x7ff0044aa440>, 'tcp://127.0.0.1:2001': <zmq.sugar.socket.Socket object at 0x7ff0044aa4b0>, 'tcp://127.0.0.1:2004': <zmq.sugar.socket.Socket object at 0x7ff0044aa6e0>}
+#################
+NODE -tcp://127.0.0.1:2000
+[{'key': 'key-0', 'value': 'value-0'}, {'key': 'key-2', 'value': 'value-2'}, {'key': 'key-4', 'value': 'value-4'}, {'key': 'key-1', 'value': 'value-1'}, {'key': 'key-7', 'value': 'value-7'}, {'key': 'key-8', 'value': 'value-8'}, {'key': 'key-3', 'value': 'value-3'}, {'key': 'key-5', 'value': 'value-5'}]
+#################
+NODE -tcp://127.0.0.1:2001
+[{'key': 'key-9', 'value': 'value-9'}]
+#################
+NODE -tcp://127.0.0.1:2004
+[{'key': 'key-6', 'value': 'value-6'}]
+total keys recieved = 10
