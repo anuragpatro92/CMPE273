@@ -48,3 +48,37 @@ class Consistenthashing(object):
             return self.nodes_map[self.hnodes[pos]]
 
 
+    def add_node(self,server):
+
+        node = "{0}-{1}".format(server,0)
+        self.nodes.append(node)
+        hashedValue = self.hash(node)
+        pos = bisect(self.hnodes, hashedValue)
+
+
+        if pos == len(self.hnodes):
+            prev_node =  self.nodes_map[self.hnodes[0]]
+        else:
+            prev_node =  self.nodes_map[self.hnodes[pos]]
+
+        self.hnodes.insert(pos, hashedValue)
+        self.nodes_map[hashedValue] = server
+
+        return prev_node
+
+    def remove_node(self,server):
+
+        node = "{0}-{1}".format(server, 0)
+        pos = self.hnodes.index(self.hash(node)) + 1
+
+        if pos == len(self.hnodes):
+            prev_node =  self.nodes_map[self.hnodes[0]]
+        else:
+            prev_node =  self.nodes_map[self.hnodes[pos]]
+
+        self.nodes.remove(node);
+        self.hnodes.remove(self.hash(node))
+        self.nodes_map.pop(self.hash(node))
+
+
+
